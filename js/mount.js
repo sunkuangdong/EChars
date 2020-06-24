@@ -1,8 +1,8 @@
 let mount = () => {
     let data = new Date()
     let y = data.getFullYear()
-    let m = data.getMonth()
-    let d = data.getDay()
+    let m = data.getMonth() + 1
+    let d = data.getDate()
     let h = data.getHours()
     let f = data.getMinutes()
     let s = data.getSeconds()

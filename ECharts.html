@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 600px;
+            height: 400px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script src="./js/echarts.min.js"></script>
+    <script>
+        // 初始化实例对象
+        let myChart = echarts.init(document.querySelector('.box'))
+        // 指定图表的配置项和数据
+        var option = {
+            color: ['pink', 'red', 'blue'],
+            // 标题的配置项
+            title: {
+                text: 'ECharts 入门示例'
+            },
+            // 提示框组件的配置项
+            tooltip: {
+                // 触发方式 (柱形图item,折线图axis)
+                trigger: 'item'
+            },
+            // 图例组件
+            legend: {
+                data: ['销量', '总量', '部分']
+            },
+            // 工具箱组件(下载图表)
+            toolbox: {
+                feature: {
+                    saveAsImage: {}
+                },
+                right: '3%',
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                // 刻度标签的显示
+                containLabel: true
+            },
+            // X轴相关配置
+            xAxis: {
+                // X轴显示的位置是纵向的
+                type: "category",
+                // 跟坐标轴是否留有缝隙(普通柱状图最好是留有缝隙)
+                boundaryGap: true,
+                data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+            },
+            // Y轴相关配置
+            yAxis: {
+                // Y轴显示的位置是横向的
+                type: "value",
+            },
+            series: [{
+                    name: '销量',
+                    // bar表示柱形图,line表示折线图
+                    type: 'bar',
+                    data: [5, 20, 36, 10, 10, 20],
+                },
+                {
+                    name: '总量',
+                    // bar表示柱形图,line表示折线图
+                    type: 'line',
+                    data: [5, 20, 36, 10, 10, 20],
+                },
+                {
+                    name: '部分',
+                    // bar表示柱形图,line表示折线图
+                    type: 'line',
+                    data: [20, 10, 35, 10, 10, 20],
+                }
+            ]
+        };
+        // 把配置项和数据交给实例对象
+        myChart.setOption(option);
+    </script>
+</body>
+
+</html>
