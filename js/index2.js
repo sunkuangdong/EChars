@@ -1,3 +1,4 @@
+// 柱状图2
 (function () {
     let myChart = echarts.init(document.querySelector('.bar2 .chart'));
     let myColor = ['#1089E7', '#F57474', '#56D0E3', '#F8B448', '#8B78F6']
